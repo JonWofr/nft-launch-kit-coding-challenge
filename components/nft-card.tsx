@@ -12,16 +12,11 @@ type Props = {
   NFT: NFT;
 };
 
-const NFTCard = ({
-  NFT: { name, imageURL, price, likes, views, lastPrice },
-}: Props) => {
+const NFTCard = ({ NFT: { name, imageURL, price, lastPrice } }: Props) => {
   return (
     <article className="flex flex-col bg-secondaryBackground rounded-xl overflow-hidden min-h-[400px]">
       <AspectRatioContainer>
-        <img
-          src="/images/5f9beab0a7693764eaba78560ac73558.png"
-          className="w-full h-full object-cover"
-        />
+        <img src={imageURL} className="w-full h-full object-cover" />
       </AspectRatioContainer>
       <header className="p-4 flex justify-between items-start">
         <div>
@@ -38,10 +33,15 @@ const NFTCard = ({
         <ul className="flex gap-3">
           <StatItem
             icon={<HeartIcon className="fill-secondaryFont w-4 h-4" />}
-            label={`${likes} favorites`}
+            label={`5 favorites`}
           />
-          <StatItem icon={<EyeIcon />} label={`${views} views`} />
-          <StatItem icon={<EthereumIconWhite />} label={`${lastPrice} last`} />
+          <StatItem icon={<EyeIcon />} label={`5 views`} />
+          {lastPrice && (
+            <StatItem
+              icon={<EthereumIconWhite />}
+              label={`${lastPrice} last`}
+            />
+          )}
         </ul>
       </footer>
     </article>

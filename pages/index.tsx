@@ -1,45 +1,19 @@
 import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
 import Container from '../components/container';
 import Heading from '../components/heading';
 import NFTCard from '../components/nft-card';
 import Section from '../components/section';
 import NFT from '../models/nft';
+import { fetchNFTs } from '../utils/nft-controller';
 
 const Home: NextPage = () => {
-  const NFTs: NFT[] = [
-    {
-      name: 'Bored ape',
-      imageURL: '',
-      price: 5,
-      likes: 100,
-      views: 500,
-      lastPrice: 4,
-    },
-    {
-      name: 'Bored ape',
-      imageURL: '',
-      price: 5,
-      likes: 100,
-      views: 500,
-      lastPrice: 4,
-    },
-    {
-      name: 'Bored ape',
-      imageURL: '',
-      price: 5,
-      likes: 100,
-      views: 500,
-      lastPrice: 4,
-    },
-    {
-      name: 'Bored ape',
-      imageURL: '',
-      price: 5,
-      likes: 100,
-      views: 500,
-      lastPrice: 4,
-    },
-  ];
+  const [NFTs, setNFTs] = useState<NFT[]>([]);
+
+  useEffect(() => {
+    fetchNFTs().then((NFTs) => setNFTs(NFTs));
+  }, []);
+
   return (
     <main className="min-h-screen">
       <Section>

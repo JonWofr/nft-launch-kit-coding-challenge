@@ -1,10 +1,9 @@
 interface NFT {
   name: string;
   imageURL: string;
-  price: number;
-  likes: number;
-  views: number;
-  lastPrice: number;
+  price?: string;
+  lastPrice?: string;
+  owner: string;
 }
 
 export default NFT;
