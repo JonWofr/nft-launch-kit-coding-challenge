@@ -5,9 +5,6 @@ import Header from '../components/header';
 import '@rainbow-me/rainbowkit/styles.css';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from '../tailwind.config.js';
-
-const fullConfig = resolveConfig(tailwindConfig);
-
 import {
   darkTheme,
   getDefaultWallets,
@@ -17,13 +14,15 @@ import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import Avatar from '../components/avatar';
 
+const fullConfig = resolveConfig(tailwindConfig);
+
 const { chains, provider } = configureChains(
   [chain.mainnet],
   [publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
+  appName: 'BAYC Collection',
   chains,
 });
 
@@ -33,7 +32,7 @@ const wagmiClient = createClient({
   provider,
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
@@ -53,4 +52,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

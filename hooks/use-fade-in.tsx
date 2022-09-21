@@ -1,5 +1,9 @@
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
+/**
+ * Hook to handle the logic needed to fade in elements.
+ * @returns The reference that should be applied to the element that should be faded in and a boolean saying if that element is currently in the viewport or not.
+ */
 const useFadeIn = <T extends HTMLElement>(): [
   MutableRefObject<T | null>,
   boolean

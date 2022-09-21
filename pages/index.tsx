@@ -14,12 +14,17 @@ import { fetchNFTs } from '../utils/nft-controller';
 const Home: NextPage = () => {
   const [NFTs, setNFTs] = useState<NFT[]>([]);
   const [shouldShowSpinner, setShouldShowSpinner] = useState(true);
+  // Used for pagination of NFTs
   const continuationRef = useRef<string | undefined>(undefined);
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  /**
+   * Handles data fetching logic and gives feedback on the UI accordingly.
+   * @param lastContinuation A reference of the last fetch. Used to paginate the data.
+   */
   const fetchData = async (lastContinuation?: string) => {
     try {
       setShouldShowSpinner(true);

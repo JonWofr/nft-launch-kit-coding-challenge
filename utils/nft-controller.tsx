@@ -8,6 +8,11 @@ export const BAYC_COLLECTION_ADDRESS =
   '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
 const NETWORK = 'ETHEREUM';
 
+/**
+ * Fetches the BAYC NFTs from Rarible.
+ * @param lastContinuation A reference of the last fetch. Used to paginate the data.
+ * @returns Returns BAYC NFTs paginated.
+ */
 export const fetchNFTs = async (
   lastContinuation?: string
 ): Promise<[string | undefined, NFT[]]> => {
@@ -43,6 +48,11 @@ export const fetchNFTs = async (
   return [continuation, NFTs];
 };
 
+/**
+ * Used to fetch the current owner of a token.
+ * @param tokenId The id of the token.
+ * @returns The address of the owner.
+ */
 const getOwner = async (tokenId: string) => {
   const { ownerships }: GetOwnershipsByItemsResponse = await fetch(
     `${RARIBLE_API_URL}/ownerships/byItem?itemId=${NETWORK}:${BAYC_COLLECTION_ADDRESS}:${tokenId}`
@@ -54,6 +64,11 @@ const getOwner = async (tokenId: string) => {
   return owner;
 };
 
+/**
+ * Used to fetch the current price of a token.
+ * @param tokenId The id of the token.
+ * @returns The current price of the token if the token has been listed for sale. Otherwise undefined is returned.
+ */
 const getPrice = async (tokenId: string) => {
   const { activities: listActivities }: GetListActivitiesByItemResponse =
     await fetch(
