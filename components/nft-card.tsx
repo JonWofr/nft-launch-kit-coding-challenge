@@ -24,7 +24,11 @@ const NFTCard = ({
     >
       <article className="flex flex-col bg-secondaryBackground rounded-xl overflow-hidden min-h-[400px] hover:scale-[1.025] transition-transform">
         <AspectRatioContainer>
-          <img src={imageURL} className="w-full h-full object-cover" alt="" />
+          <img
+            src={imageURL}
+            className="w-full h-full object-cover rounded-t-xl"
+            alt=""
+          />
         </AspectRatioContainer>
         <header className="p-4 flex justify-between items-start gap-1">
           <div>
