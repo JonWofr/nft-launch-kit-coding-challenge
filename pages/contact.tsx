@@ -22,6 +22,7 @@ const Contact: NextPage = () => {
                   href="https://jonas-wolfram.com"
                   className="underline text-secondaryFont"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   My portfolio
                 </a>
@@ -31,6 +32,7 @@ const Contact: NextPage = () => {
                   href="https://twitter.com/jonas_wolfram"
                   className="underline text-secondaryFont"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   My Twitter
                 </a>
@@ -40,6 +42,7 @@ const Contact: NextPage = () => {
                   href="https://github.com/JonWofr"
                   className="underline text-secondaryFont"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   My GitHub
                 </a>
@@ -49,6 +52,7 @@ const Contact: NextPage = () => {
                   href="mailto:contact@jonas-wolfram.com"
                   className="underline text-secondaryFont"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   My mail
                 </a>
