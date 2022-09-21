@@ -15,6 +15,7 @@ import {
 } from '@rainbow-me/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
+import Avatar from '../components/avatar';
 
 const { chains, provider } = configureChains(
   [chain.mainnet],
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             (fullConfig.theme?.gradientColorStops as any).primaryAccentFrom
           }, ${(fullConfig.theme?.gradientColorStops as any).primaryAccentTo})`,
         })}
+        avatar={({ address }) => <Avatar address={address} />}
       >
         <Header />
         <Component {...pageProps} />

@@ -14,7 +14,7 @@ const Footer = () => {
           <a
             href="https://jonas-wolfram.com"
             target="_blank"
-            className="font-bold"
+            className="font-bold hover:brightness-75 transition-all"
           >
             Jonas Wolfram
           </a>

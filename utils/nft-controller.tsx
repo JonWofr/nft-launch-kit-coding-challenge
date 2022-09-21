@@ -4,12 +4,17 @@ import GetOwnershipsByItemsResponse from '../models/get-ownerships-by-item-respo
 import NFT from '../models/nft';
 
 const RARIBLE_API_URL = 'https://api.rarible.org/v0.1';
-const BAYC_COLLECTION_ADDRESS = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+export const BAYC_COLLECTION_ADDRESS =
+  '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
 const NETWORK = 'ETHEREUM';
 
-export const fetchNFTs = async (): Promise<NFT[]> => {
+export const fetchNFTs = async (
+  lastContinuation?: string
+): Promise<[string | undefined, NFT[]]> => {
   const { items, continuation }: GetItemsByCollectionResponse = await fetch(
-    `${RARIBLE_API_URL}/items/byCollection?collection=${NETWORK}:${BAYC_COLLECTION_ADDRESS}&&size=5`
+    `${RARIBLE_API_URL}/items/byCollection?collection=${NETWORK}:${BAYC_COLLECTION_ADDRESS}&&size=4${
+      lastContinuation ? `&&continuation=${lastContinuation}` : ''
+    }`
   ).then((response) => response.json());
 
   const NFTs = await Promise.all(
@@ -29,11 +34,13 @@ export const fetchNFTs = async (): Promise<NFT[]> => {
         price,
         lastPrice: item.lastSale?.price,
         owner,
+        mintedAt: new Date(item.mintedAt).toLocaleDateString(),
+        tokenId: item.tokenId,
       };
     })
   );
 
-  return NFTs;
+  return [continuation, NFTs];
 };
 
 const getOwner = async (tokenId: string) => {

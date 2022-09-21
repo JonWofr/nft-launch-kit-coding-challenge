@@ -7,6 +7,7 @@ interface GetItemsByCollectionResponse {
     };
     tokenId?: string;
     lastSale?: { price: string };
+    mintedAt: string;
   }[];
 }
 

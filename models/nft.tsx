@@ -4,6 +4,8 @@ interface NFT {
   price?: string;
   lastPrice?: string;
   owner: string;
+  mintedAt: string;
+  tokenId: string;
 }
 
 export default NFT;

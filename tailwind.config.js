@@ -33,6 +33,34 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        'spin-slow': 'spin 2s linear infinite',
+        dash: 'dash 1.5s ease-in-out infinite, color 1.5s ease-in-out infinite alternate',
+      },
+      keyframes: ({ theme }) => ({
+        dash: {
+          '0%': {
+            'stroke-dasharray': '1, 150',
+            'stroke-dashoffset': '0',
+          },
+          '50%': {
+            'stroke-dasharray': '90, 150',
+            'stroke-dashoffset': '-35',
+          },
+          '100%': {
+            'stroke-dasharray': '90, 150',
+            'stroke-dashoffset': '-124',
+          },
+        },
+        color: {
+          '0%': {
+            stroke: theme('gradientColorStops.primaryAccentFrom'),
+          },
+          '100%': {
+            stroke: theme('gradientColorStops.primaryAccentTo'),
+          },
+        },
+      }),
     },
   },
   plugins: [],

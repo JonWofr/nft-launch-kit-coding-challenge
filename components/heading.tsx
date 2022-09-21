@@ -22,7 +22,15 @@ const Heading = ({ type, children, className }: Props) => {
       );
     case 'secondary':
       return (
-        <h2 className="font-bold text-2xl text-primaryFont"> {children}</h2>
+        <h2
+          className={classNames(
+            'font-bold text-2xl text-primaryFont',
+            className
+          )}
+        >
+          {' '}
+          {children}
+        </h2>
       );
     default:
       return <>{children}</>;

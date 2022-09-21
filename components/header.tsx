@@ -13,15 +13,15 @@ const Header = () => {
   const links: Link[] = [
     {
       href: '/',
-      label: 'Link 1',
+      label: 'Home',
     },
     {
-      href: '/',
-      label: 'Link 2',
+      href: '/about',
+      label: 'About',
     },
     {
-      href: '/',
-      label: 'Link 3',
+      href: '/contact',
+      label: 'Contact',
     },
   ];
 
@@ -56,7 +56,7 @@ const Header = () => {
               {links.map((link, index) => (
                 <li key={index}>
                   <NextLink href={link.href}>
-                    <a className="text-primaryFont uppercase tracking-widest text-xs">
+                    <a className="text-primaryFont uppercase tracking-widest text-xs hover:brightness-75 transition-all">
                       {link.label}
                     </a>
                   </NextLink>

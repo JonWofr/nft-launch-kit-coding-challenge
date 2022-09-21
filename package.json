@@ -14,6 +14,7 @@
     "ethers": "^5.7.1",
     "next": "12.3.1",
     "react": "18.2.0",
+    "react-blockies": "^1.4.1",
     "react-dom": "18.2.0",
     "wagmi": "^0.6.6"
   },
@@ -21,6 +22,7 @@
     "@svgr/webpack": "^6.3.1",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
+    "@types/react-blockies": "^1.4.1",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.11",
     "eslint": "8.23.1",
