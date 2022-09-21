@@ -1,34 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NFTLaunchKit - Coding Challenge
 
-## Getting Started
+This project has been developed as part of a coding challenge by NFTLaunchKit.
 
-First, run the development server:
+The project is a Next.js project with TypeScript and tailwindcss. The website has been developed with a mobile-first approach meaning it got designed and developed for the phone layout first and then adjusted to fit bigger screen sizes. For the wallet connection RainbowKit has been used which in itself uses Wagmi.sh and ethers.js. It is possible to use all major wallet connectors to establish the connection to the website. The BAYC NFTs are fetched with the help of the Rarible API. Finally, the project has been deployed to Vercel.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The code itself should be rather self-explanatory. Wherever needed I added additional comments to further explain the code.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The website can be reached under the following domain:
+https://nft-launch-kit-coding-challenge-17h6patro-jonwofr.vercel.app
