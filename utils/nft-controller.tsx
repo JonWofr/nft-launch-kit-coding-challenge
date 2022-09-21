@@ -17,7 +17,7 @@ export const fetchNFTs = async (
   lastContinuation?: string
 ): Promise<[string | undefined, NFT[]]> => {
   const { items, continuation }: GetItemsByCollectionResponse = await fetch(
-    `${RARIBLE_API_URL}/items/byCollection?collection=${NETWORK}:${BAYC_COLLECTION_ADDRESS}&&size=4${
+    `${RARIBLE_API_URL}/items/byCollection?collection=${NETWORK}:${BAYC_COLLECTION_ADDRESS}&&size=8${
       lastContinuation ? `&&continuation=${lastContinuation}` : ''
     }`
   ).then((response) => response.json());
